@@ -326,10 +326,6 @@ button{font-family:inherit;}
   <div class="wrap">
     <div class="mast-in">
       <a class="lockup" href="#/" aria-label="S Joseph Law LLC — home">
-        <svg class="mark" width="52" height="52" viewBox="0 0 100 100" role="img" aria-label="S Joseph Law monogram">
-          <rect width="100" height="100" rx="22" fill="#1f3a2e"/>
-          <text x="50" y="70" text-anchor="middle" font-family="Cormorant Garamond, Garamond, Georgia, serif" font-size="52" font-weight="500" fill="#f4f2ea" letter-spacing="1">SJ</text>
-        </svg>
         <span class="brand-block">
           <span class="brand">S JOSEPH LAW<span class="llc">LLC</span></span>
           <span class="brand-rule"></span>
@@ -343,11 +339,13 @@ button{font-family:inherit;}
     </div>
     <nav class="nav" aria-label="Primary">
       <a class="nlink" href="#/" data-nav="home">Home</a>
-      <a class="nlink" href="#/path" data-nav="path">The Development Path</a>
       <a class="nlink" href="#/practice" data-nav="practice">Practice Areas</a>
-      <a class="nlink" href="#/condominium-conversion" data-nav="condo">Condominium Conversion</a>
       <a class="nlink" href="#/team" data-nav="team">Team</a>
       <a class="nlink" href="#/contact" data-nav="contact">Contact</a>
+      <!-- HIDDEN PENDING CLIENT WORK — restore by uncommenting:
+      <a class="nlink" href="#/path" data-nav="path">The Path to Approval</a>
+      <a class="nlink" href="#/condominium-conversion" data-nav="condo">Condominium Conversion</a>
+      -->
     </nav>
   </div>
 </header>
@@ -425,7 +423,7 @@ button{font-family:inherit;}
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <p class="sec-eyebrow">The development path</p>
+    <p class="sec-eyebrow">The path to approval</p>
     <h2 class="sec-h">From raw land to exit — and where we come in.</h2>
     <p class="sec-intro">Every development moves through the same arc, with land use and zoning running through the middle of it. Six stages, then one of two exits.</p>
     <div class="serve" style="margin-top:24px;">
@@ -434,7 +432,9 @@ button{font-family:inherit;}
       <div class="serve-item"><div class="proj-cat">Stages 05–06</div><h3 class="serve-name">Build</h3><p class="serve-line">Construction financing and the build itself, through to Certificate of Occupancy.</p></div>
       <div class="serve-item"><div class="proj-cat">Exit</div><h3 class="serve-name">Condo or hold</h3><p class="serve-line">Convert to condominiums and sell out, or lease up, stabilize, and place permanent financing.</p></div>
     </div>
+    <!-- Link to the full interactive page is hidden until that page is ready:
     <a class="more" href="#/path">Walk through the full path →</a>
+    -->
   </div></section>
 
   <section class="sec sec-cream"><div class="wrap">
@@ -463,11 +463,14 @@ button{font-family:inherit;}
 
 </div>
 
-<!-- ══════════ DEVELOPMENT PATH ══════════ -->
+<!-- ══════════ THE PATH TO APPROVAL ══════════
+     HIDDEN FROM NAV pending further client work (target: after Oct 1).
+     Page still renders at #/path for internal review. Restore the nav
+     link in the masthead and footer when ready. -->
 <div class="page" data-page="path" hidden>
   <div class="phead">
     <p class="eyebrow">The development lifecycle</p>
-    <h1>Where S Joseph Law Fits In</h1>
+    <h1>The Path to Approval</h1>
     <p>Every development moves through the same arc — from raw land to a finished, financed building. Here is that path, stage by stage, and exactly where we come in along the way.</p>
     <p class="tl-note"><b>Click</b> any stage to see what we handle</p>
   </div>
@@ -667,7 +670,6 @@ button{font-family:inherit;}
           <li>Sponsor representation through sell-out</li>
           <li>Unit closings</li>
         </ul>
-        <p style="margin-top:12px;"><a class="more" style="margin-top:0;" href="#/condominium-conversion">More on condominium conversion →</a></p>
       </div>
       <div class="pa">
         <div class="pa-tag">For other firms</div>
@@ -684,7 +686,10 @@ button{font-family:inherit;}
   </div></section>
 </div>
 
-<!-- ══════════ CONDOMINIUM CONVERSION ══════════ -->
+<!-- ══════════ CONDOMINIUM CONVERSION ══════════
+     REMOVED FROM NAV at client request. Page preserved here and still
+     renders at #/condominium-conversion. This is the long-tail SEO page —
+     recommend restoring it once the NJ/NY process section is written. -->
 <div class="page" data-page="condo" hidden>
   <div class="phead">
     <p class="eyebrow">Exit strategy</p>
@@ -977,13 +982,15 @@ button{font-family:inherit;}
     <div class="ft-col">
       <h5>Explore</h5>
       <div class="ft-nav">
-        <a href="#/path">The Development Path</a>
         <a href="#/practice">Practice Areas</a>
-        <a href="#/condominium-conversion">Condominium Conversion</a>
         <a href="#/team">Team</a>
         <a href="#/schedule">Schedule a Call</a>
         <a href="#/message">Send a Message</a>
         <a href="#/contact">Contact</a>
+        <!-- HIDDEN PENDING CLIENT WORK — restore alongside the masthead nav:
+        <a href="#/path">The Path to Approval</a>
+        <a href="#/condominium-conversion">Condominium Conversion</a>
+        -->
       </div>
     </div>
   </div>
@@ -998,7 +1005,7 @@ button{font-family:inherit;}
   var ROUTES = {
     'home':   {path:'#/',                        title:'S Joseph Law LLC — Land Use, Zoning & Development Counsel | NJ & NY',
                desc:'Counsel for developers in New Jersey and New York. Land use, zoning, entitlements, real estate finance, construction, and condominiums.'},
-    'path':   {path:'#/path',                    title:'The Development Path — Where We Fit In | S Joseph Law LLC',
+    'path':   {path:'#/path',                    title:'The Path to Approval — Where We Fit In | S Joseph Law LLC',
                desc:'Every development moves through the same arc, from raw land to exit. See the six stages, the two exits, and what we handle at each.'},
     'practice':{path:'#/practice',               title:'Practice Areas — Land Use, Finance, Construction, Condominiums | S Joseph Law LLC',
                desc:'Land use and entitlements, acquisition and disposition, real estate finance, construction, condominiums, and co-counsel support.'},

@@ -40,16 +40,25 @@ Everything is in `index.html`: markup, styles, and behavior. No frameworks, no b
 
 ### Pages
 
-| Route | Page |
-|---|---|
-| `#/` | Home |
-| `#/path` | The Development Path — interactive lifecycle timeline |
-| `#/practice` | Practice Areas |
-| `#/condominium-conversion` | Condominium Conversion — the SEO page |
-| `#/team` | Team |
-| `#/schedule` | Schedule a Call — three-step booking flow |
-| `#/message` | Send a Message — short contact form |
-| `#/contact` | Contact — offices, hours, both contact paths |
+| Route | Page | In nav |
+|---|---|---|
+| `#/` | Home | ✅ |
+| `#/practice` | Practice Areas | ✅ |
+| `#/team` | Team | ✅ |
+| `#/contact` | Contact — offices, hours, both contact paths | ✅ |
+| `#/schedule` | Schedule a Call — three-step booking flow | via buttons |
+| `#/message` | Send a Message — short contact form | via buttons |
+| `#/path` | The Path to Approval — interactive lifecycle timeline | ⬜ hidden |
+| `#/condominium-conversion` | Condominium Conversion — long-tail SEO page | ⬜ hidden |
+
+### Hidden pages
+
+Two pages are built and working but pulled from the navigation. They still render if you visit the route directly, which makes them easy to review before they go live.
+
+- **The Path to Approval** (`#/path`) — renamed from "The Development Path." Hidden until the client can invest more in it; target is after Oct 1.
+- **Condominium Conversion** (`#/condominium-conversion`) — removed from nav at the client's request. Recommend restoring once the NJ vs NY process section is written; it is the strongest long-tail SEO asset on the site.
+
+To restore either one, uncomment the matching `<a>` in two places — the `<nav class="nav">` block in the masthead and the `.ft-nav` block in the footer. Both are marked `HIDDEN PENDING CLIENT WORK`. Nothing else needs changing; the routes and metadata are already wired.
 
 ### Design tokens
 
@@ -72,7 +81,7 @@ Typography: Cormorant Garamond / Garamond / Georgia serif for display, system sa
 
 ## Status: what is real and what is not
 
-**Placeholders are visible on purpose.** Anything unverified renders in a bracketed tan box (`.tbd`). There are currently **28** of them. Nothing can ship by accident — search the file for `class="tbd"` to find them all.
+**Placeholders are visible on purpose.** Anything unverified renders in a bracketed tan box (`.tbd`). There are currently **39** of them. Nothing can ship by accident — search the file for `class="tbd"` to find them all.
 
 ### Needed from the client before launch
 
@@ -94,7 +103,9 @@ Typography: Cormorant Garamond / Garamond / Georgia serif for display, system sa
 
 - **Tagline conflict.** The business card reads *Land Development · Commercial Real Estate · Financing · Condominiums*. The site reads *Land Use, Zoning & Development · ...*. The site version is in use here because land use and zoning is the stated core expertise. One answer needed — the cards are printed.
 - **Business card office.** The card shows a New York Park Avenue address and a (212) number; the site is Hoboken-primary with a (201) number. The card likely needs a reprint.
-- **The brick mark** from the app-icon sheet is unused. The masthead uses the SJ monogram, matching the letterhead and cards. Is the brick an app icon only, or is it competing for primary?
+- **Palette: navy or green?** Still open. The green (`--forest #1f3a2e`) is in use across the site, the monogram tiles, the business cards, and the app icon. A navy comp has since been produced. Whichever wins, it needs to be settled before anything is printed again — this would be the third palette pivot.
+- **The SJ monogram is no longer in the masthead** (removed at client request). The wordmark stands alone. The monogram still exists as an avatar and app icon asset, so it needs a defined role — or it should be retired.
+- **Tagline, fourth variant.** The navy comp reads *Real Estate Development* as the primary line with *Land Use & Zoning · Finance · Condominiums* beneath it. That two-tier hierarchy is better than the flat four-item list currently on the site, regardless of which color wins. One final wording needed.
 
 ---
 
