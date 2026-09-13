@@ -60,9 +60,23 @@ Two pages are built and working but pulled from the navigation. They still rende
 
 To restore either one, uncomment the matching `<a>` in two places — the `<nav class="nav">` block in the masthead and the `.ft-nav` block in the footer. Both are marked `HIDDEN PENDING CLIENT WORK`. Nothing else needs changing; the routes and metadata are already wired.
 
+### Palette comparison
+
+**https://djpierogi23.github.io/s_joseph_website/palette-preview.html**
+
+The same page in green and navy, switchable from a bar at the bottom. Navy is a **pure token override** — not one line of markup or layout differs between them, so it is a true like-for-like comparison.
+
+`palette-preview.html` is generated, not hand-edited. After changing `index.html`, regenerate it:
+
+```bash
+python3 build_preview.py
+```
+
+Delete `build_preview.py` and `palette-preview.html` once the palette is decided.
+
 ### Design tokens
 
-Defined once in `:root` at the top of the file. Change them there and they propagate everywhere.
+Every colour on the site is a CSS custom property defined in `:root` at the top of `index.html` — there are no hardcoded colour values anywhere else in the file. That is what makes the navy comparison a one-block swap.
 
 | Token | Value | Use |
 |---|---|---|

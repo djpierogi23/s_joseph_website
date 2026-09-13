@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S Joseph Law LLC — Land Use, Zoning &amp; Development Counsel | NJ &amp; NY</title>
+<title>Palette comparison — S Joseph Law LLC</title>
 <meta name="description" content="Counsel for developers in New Jersey and New York. Land use, zoning, entitlements, real estate finance, construction, and condominiums.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -322,6 +322,49 @@ button{font-family:inherit;}
   *{transition:none!important;animation:none!important;}
   .card:hover,.proj:hover .ph,.serve-item:hover{transform:none;}
 }
+</style>
+
+<style id="palette-navy">
+/* Navy palette — token override only. Gold accent retained; sage used for
+   small-cap labels on dark, matching the navy business-card comp. */
+:root.navy{
+  --forest:#1d2b40; --forest2:#15202f; --forest3:#2b3c52;
+  --brass:#b28a4c; --brasstx:#7a5c2c; --brass2:#c69f5c;
+  --ink:#1f2833; --body:#4c545d; --mut:#676e77;
+  --line:#e2e5ea; --cream:#f6f6f2; --ph:#e7eaee;
+  --on-dark:#f4f2ea; --on-dark-body:#cbd3dc; --on-dark-mut:#9fb0a4;
+  --on-dark-sub:#b9c4d0; --on-dark-faint:#7f8d95; --on-dark-ghost:#e4ddcc;
+  --edge-strong:#c3c9d1; --edge-field:#d2d7de; --edge-soft:#dde1e7;
+  --dim:#bfc5cd; --ph-txt:#7d8795; --cream2:#f0f1ee; --nav-txt:#474d55;
+  --tbd-bg:#f3ede1; --tbd-line:#d8c49b;
+  --tbd-dark-txt:#cdbb96; --tbd-dark-txt2:#e0cfa8;
+  --shadow-rgb:29,43,64;
+}
+/* The monogram rect is the one non-token colour (an inline SVG fill). */
+:root.navy .mark rect{fill:#1d2b40;}
+
+/* ── switcher chrome ── */
+#pal-bar{position:fixed;bottom:0;left:0;right:0;z-index:9000;
+  background:rgba(255,255,255,.97);border-top:1px solid #dcdfe3;
+  box-shadow:0 -2px 14px rgba(0,0,0,.08);
+  padding:11px 20px;display:flex;align-items:center;justify-content:center;
+  gap:16px;flex-wrap:wrap;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;}
+#pal-bar .lbl{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;
+  color:#6b7280;font-weight:700;}
+#pal-bar .grp{display:flex;gap:0;border:1px solid #d3d7dc;border-radius:4px;overflow:hidden;}
+#pal-bar button{font-family:inherit;font-size:13px;font-weight:600;padding:9px 20px;
+  border:none;background:#fff;color:#3f4650;cursor:pointer;display:flex;
+  align-items:center;gap:8px;}
+#pal-bar button+button{border-left:1px solid #d3d7dc;}
+#pal-bar button:hover{background:#f3f5f7;}
+#pal-bar button[aria-pressed="true"]{background:#1f2833;color:#fff;}
+#pal-bar .sw{width:13px;height:13px;border-radius:50%;display:inline-block;
+  border:1px solid rgba(0,0,0,.18);}
+#pal-bar .note{font-size:12px;color:#6b7280;}
+#pal-bar .note a{color:#1f2833;font-weight:600;}
+body{padding-bottom:62px;}
+@media(max-width:640px){#pal-bar .note{display:none;}}
+@media print{#pal-bar{display:none;}body{padding-bottom:0;}}
 </style>
 </head>
 <body>
@@ -1049,7 +1092,7 @@ button{font-family:inherit;}
       else { a.removeAttribute('aria-current'); }
     });
     var r = ROUTES[key];
-    if(r){ try{ document.title = r.title; setMeta('description', r.desc); }catch(e){} }
+    if(r){ try{ /* title fixed in preview */ setMeta('description', r.desc); }catch(e){} }
     if(key === 'schedule'){ resetBooking(); }
     if(key === 'message'){
       var w = document.querySelector('[data-msg-form-wrap]'), s = document.querySelector('[data-msg-sent]');
@@ -1254,6 +1297,37 @@ button{font-family:inherit;}
   }catch(e){}
 
   route();
+})();
+</script>
+
+<div id="pal-bar" role="group" aria-label="Palette comparison">
+  <span class="lbl">Palette</span>
+  <span class="grp">
+    <button type="button" data-pal="green" aria-pressed="true">
+      <span class="sw" style="background:#1f3a2e"></span>Green</button>
+    <button type="button" data-pal="navy" aria-pressed="false">
+      <span class="sw" style="background:#1d2b40"></span>Navy</button>
+  </span>
+  <span class="note">Comparison only &mdash; the live site is
+    <a href="index.html">index.html</a></span>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('pal-bar');
+  function set(p){
+    document.documentElement.classList.toggle('navy', p === 'navy');
+    bar.querySelectorAll('[data-pal]').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-pal') === p));
+    });
+    try{ localStorage.setItem('sj-palette', p); }catch(e){}
+  }
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('[data-pal]');
+    if(b) set(b.getAttribute('data-pal'));
+  });
+  var saved = null;
+  try{ saved = localStorage.getItem('sj-palette'); }catch(e){}
+  if(saved) set(saved);
 })();
 </script>
 </body>
